@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -86,8 +87,7 @@ public class DetailActivity extends AppCompatActivity {
         // Display the ingredients
         TextView ingredientTv = findViewById(R.id.ingredients_tv);
         List<String> ingredientsList = sandwich.getIngredients();
-        for (String ingredient : ingredientsList) {
-            ingredientTv.append((ingredient) + "\n");
-        }
+        String ingredients = TextUtils.join("\n", ingredientsList);
+        ingredientTv.setText(ingredients);
     }
 }
