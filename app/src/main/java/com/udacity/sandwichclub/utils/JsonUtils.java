@@ -11,7 +11,7 @@ import java.util.List;
 
 public class JsonUtils {
 
-    private  static List<String> JsonToStringList(JSONArray array) throws JSONException {
+    private  static List<String> JsonToStringList(JSONArray array){
         List<String> stringList = new ArrayList<>();
         int index;
         for(index = 0; index < array.length(); index++) {
@@ -21,7 +21,7 @@ public class JsonUtils {
         return stringList;
     }
 
-    public static Sandwich parseSandwichJson(String json) throws JSONException {
+    public static Sandwich parseSandwichJson(String json){
 
         // Sandwich JSON field names
         final String SANDWICH_NAME = "name";
@@ -33,7 +33,12 @@ public class JsonUtils {
         final String SANDWICH_INGREDIENTS = "ingredients";
 
         // Convert string to JSON
-        JSONObject sandwichJson = new JSONObject(json);
+        JSONObject sandwichJson = null;
+        try {
+            sandwichJson = new JSONObject(json);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         // Get the sandwich names
         JSONObject nameJson = sandwichJson.optJSONObject(SANDWICH_NAME);

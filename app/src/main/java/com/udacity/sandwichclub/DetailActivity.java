@@ -42,11 +42,9 @@ public class DetailActivity extends AppCompatActivity {
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
         Sandwich sandwich = null;
-        try {
-            sandwich = JsonUtils.parseSandwichJson(json);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
+        sandwich = JsonUtils.parseSandwichJson(json);
+
         if (sandwich == null) {
             // Sandwich data unavailable
             closeOnError();
@@ -86,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
         // Display the ingredients
         TextView ingredientTv = findViewById(R.id.ingredients_tv);
         List<String> ingredientsList = sandwich.getIngredients();
-        for (String ingredient: ingredientsList) {
+        for (String ingredient : ingredientsList) {
             ingredientTv.append((ingredient) + "\n");
         }
     }
