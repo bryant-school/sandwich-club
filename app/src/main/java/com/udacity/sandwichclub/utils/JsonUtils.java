@@ -15,7 +15,7 @@ public class JsonUtils {
         List<String> stringList = new ArrayList<>();
         int index;
         for(index = 0; index < array.length(); index++) {
-            stringList.add(array.getString(index));
+            stringList.add(array.optString(index));
         }
 
         return stringList;
@@ -36,22 +36,22 @@ public class JsonUtils {
         JSONObject sandwichJson = new JSONObject(json);
 
         // Get the sandwich names
-        JSONObject nameJson = sandwichJson.getJSONObject(SANDWICH_NAME);
-        String mainName = nameJson.getString(SANDWICH_MAINNAME);
-        JSONArray alsoKnowAsJson = nameJson.getJSONArray(SANDWICH_ALSOKNOWNAS);
+        JSONObject nameJson = sandwichJson.optJSONObject(SANDWICH_NAME);
+        String mainName = nameJson.optString(SANDWICH_MAINNAME);
+        JSONArray alsoKnowAsJson = nameJson.optJSONArray(SANDWICH_ALSOKNOWNAS);
         List<String> alsoKnownAs = JsonToStringList(alsoKnowAsJson);
 
         // Get the place of origin
-        String placeOfOrigin = sandwichJson.getString(SANDWICH_ORIGIN);
+        String placeOfOrigin = sandwichJson.optString(SANDWICH_ORIGIN);
 
         // Get the description
-        String description = sandwichJson.getString(SANDWICH_DESCRIPTION);
+        String description = sandwichJson.optString(SANDWICH_DESCRIPTION);
 
         // Get the image URL
-        String imageUrl = sandwichJson.getString(SANDWICH_IMAGE);
+        String imageUrl = sandwichJson.optString(SANDWICH_IMAGE);
 
         // Get the list of ingredients
-        JSONArray ingredientsJson = (JSONArray) sandwichJson.getJSONArray(SANDWICH_INGREDIENTS);
+        JSONArray ingredientsJson = (JSONArray) sandwichJson.optJSONArray(SANDWICH_INGREDIENTS);
         List<String> ingredients = JsonToStringList(ingredientsJson);
 
         // Create the Sandwich Object and return it
