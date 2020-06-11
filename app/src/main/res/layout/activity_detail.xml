@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/image_iv"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/sandwich_image_height"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/sandwich_picture_content_description"
                 android:scaleType="centerCrop" />
@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:paddingTop="@dimen/detail_text_padding_top"
                 android:text="@string/detail_also_known_as_label"
                 android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:paddingTop="@dimen/detail_text_padding_top"
                 android:text="@string/detail_place_of_origin_label"
                 android:textStyle="bold" />
 
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:paddingTop="@dimen/detail_text_padding_top"
                 android:text="@string/detail_description_label"
                 android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
+                android:paddingTop="@dimen/detail_text_padding_top"
                 android:text="@string/detail_ingredients_label"
                 android:textStyle="bold" />
 
